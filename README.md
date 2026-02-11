@@ -1,75 +1,91 @@
 # Experimental-verification-of-frequency-response-of-Digital-fiber-optic-link
 
-AIM:
-To study an 660nm & 950nm Fiber Optic Digital Link. Here you will study how digital Signal can be transmitted over Fiber Cable & reproduced at the receiver end.
+# Fiber Optic Digital Link Experiment (660nm & 950nm)
 
-EQUIPMENTS REQUIRED:
-	Link-B Kit with power supply.
-	Patch chords.
-	20MHz Dual Channel Oscilloscope.
-	1 MHz Function Generator.
-	1 Meter Fiber Cable.
+## AIM
+To study a **660nm & 950nm Fiber Optic Digital Link**.  
+This experiment demonstrates how a digital signal can be transmitted over a fiber cable and reproduced at the receiver end.
 
-THEORY:
-Fiber optic links can be used for transmission of digital as well as analog signals. Basically a fiber optic link contains three main elements, a transmitter, an optical fiber and a receiver. The transmitter module takes the input signal in electrical form and then transforms it into optical (light) energy containing the same information. The optical fiber is the medium which takes the energy to the receiver. At the receiver light is converted back into electrical form with the same pattern as originally fed to the transmitter.
-TRANSMITTER:
-LED, digital DC coupled transmitters are one of the most popular varieties due to their ease of fabrication. We have used a standard TTL gate to drive a NPN transistor, which modulates the LED SFH450V or SFH 756V source. (Turns it on and off).
-RECEIVER:
-SFH-551V is a digital optodetector. It delivers a digital output, which can be processed directly with little additional external circuitry. The integrated circuit inside the SFH551V optodetector comprises the photodiode device, a transimpedance amplifier, a comparator and a level shifter.
-The photodiode converts the detected light into a photocurrent. With the aid of an integrated lens the light emanating from the plastic Fiber is almost entirely focused on the surface of the diode. At the next stage the trans-impedance amplifier converts the photocurrent into a voltage. In the comparator, the voltage is compared to a reference voltage. In over to ensure good synchronism between the reference and the trans- impedance output voltage, the former is derived from a second circuit of a similar kind, which incorporates a “blind” photodiode. The comparator derives a level shifter with an open collector output stages. Here a catch diode (similar to Schottky-TTL) prevents the saturation of the output transistor, thus limiting the output voltage to the supply voltage.
+---
+
+## EQUIPMENTS REQUIRED
+- Link-B Kit with power supply  
+- Patch chords  
+- 20 MHz Dual Channel Oscilloscope  
+- 1 MHz Function Generator  
+- 1 Meter Fiber Cable  
+
+---
+
+## THEORY
+Fiber optic links can be used for transmission of both digital and analog signals. A typical fiber optic link consists of three main elements:
+
+1. **Transmitter** – Converts electrical signals into optical signals.  
+2. **Optical Fiber** – Serves as the transmission medium.  
+3. **Receiver** – Converts optical signals back into electrical signals.
+
+### Transmitter
+- LED-based digital DC coupled transmitters are widely used due to ease of fabrication.  
+- A TTL gate drives an NPN transistor, which modulates the LED (SFH450V or SFH756V).  
+- The LED is turned ON and OFF to represent digital signals.
+
+### Receiver
+- The **SFH-551V** digital optodetector delivers a digital output with minimal external circuitry.  
+- It integrates:
+  - Photodiode  
+  - Transimpedance amplifier  
+  - Comparator  
+  - Level shifter  
+
+**Working principle:**
+- The photodiode converts light into photocurrent.  
+- The transimpedance amplifier converts photocurrent into voltage.  
+- The comparator compares this voltage with a reference derived from a “blind” photodiode for synchronization.  
+- The level shifter provides an open collector output stage with a catch diode to prevent transistor saturation.
+
+---
+
+## PROCEDURE
+1. Refer to the block diagram and make the required connections.  
+2. Connect the power supply to the Link-B kit with proper polarity and switch ON.  
+3. Set switches and jumpers as follows:  
+   - All fault switches **OFF**  
+   - SW8 → TX position  
+   - SW9 → TX1 position  
+   - SW10 → TTL position  
+   - JP5 → +5V position  
+   - JP6 → shorted  
+   - JP8 → Pulse position  
+4. Feed a **TTL square wave (1 kHz)** from the function generator to the **IN post of Digital Buffer**.  
+5. Connect **OUT of Digital Buffer → TX IN of Transmitter**.  
+6. Loosen the cap of **SFH756V (660nm)**, insert the fiber, and tighten the cap.  
+7. Connect the other end of the fiber to **SFH551V detector** carefully.  
+8. Observe the detected signal at **TTL OUT** on the oscilloscope.  
+9. Vary input frequency to measure digital bandwidth.  
+   - Determine the frequency at which the detector fails to recover the signal (max bit rate).  
+10. Switch SW9 → TX2 position.  
+11. JP7 → +5V position.  
+12. Remove fiber from SFH756V (660nm), loosen cap of **SFH450V (950nm)**, insert fiber, and tighten.  
+13. Observe detected signal at **TTL OUT** on oscilloscope.  
+
+---
+
+## TABULATION
+
+| Frequency (Hz) | Output Signal Amplitude (Vo) | Gain = Vo/Vi | Gain (dB) |
+|----------------|-------------------------------|--------------|-----------|
+|                |                               |              |           |
+|                |                               |              |           |
+
+---
+
+## MODEL GRAPH
+*(Attach plotted graph of Gain vs Frequency here)*
+
+---
+
+## RESULT
+The digital signal was successfully transmitted through **660nm and 950nm fiber optic links** and reproduced at the receiver end.  
+The maximum bit rate of the digital link was determined experimentally.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PROCEDURE:
-
-	Refer to the block diagram & carry out the following connections and settings.
-	Connect the power supply with proper polarity to the kit link-B and switch it on.
-	Keep all Switch Faults in OFF position.
-	Keep switch SW8 towards TX position.
-	Keep switch SW9 towards TX1 position.
-	Keep switch SW10 towards TTL position.
-	Keep Jumper JP5 towards +5V position.
-	Keep Jumpers JP6 shorted.
-	Keep Jumper JP8 towards Pulse position.
-	Feed TTL Square wave signal of 1KHz from the function generator to the IN post of Digital Buffer.
-
-
- 
-
-	Connect the output post OUT of Digital Buffer to the post TX IN of Transmitter.
-	Slightly unscrew the cap of SFH756V (660nm). Do not remove the cap from the connector. Once the cap is loosened, insert the one meter fiber into the cap. Now tighten the cap by screwing it back.
-	Connect the other end of the Fiber to detector SFH551V (Photo Transistor Detector) very carefully.
-	Observe the detected signal at post TTL OUT on oscilloscope.
- 
-	To measure the digital bandwidth of the phototransistor vary the input signal frequency and observe the detected signal at various frequencies.
-	Determine the frequency at which the detector stops recovering the signal. This determines the max. bit rate on the digital link.
-	Keep switch SW9 towards TX2 position.
-	Keep Jumper JP7 towards +5V position.
-	Remove fiber cable from SFH756V (660nm) and slightly unscrew the cap of SFH450V (950nm). Do not remove the cap from the connector. Once the cap is loosened, insert the one meter fiber into the cap. Now tighten the cap by screwing it back.
-	Observe the detected signal at post TTL OUT on oscilloscope.
- 
-
- 
-TABULATION:
-Transmission through Digital Link      Vi =
-
-Frequency (Hz)	Output Signal
-Amplitude(Vo)	Gain = Vo/Vi	Gain in dB
-			
-
-MODEL GRAPH:
-RESULT:
